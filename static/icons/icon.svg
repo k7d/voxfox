@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <!-- ears + head -->
+  <path fill="url(#g)" d="M14 10 L44 36 H84 L114 10 L110 66 C110 94 89 118 64 118 C39 118 18 94 18 66 Z"/>
+  <!-- inner ears -->
+  <path fill="#7c2d12" opacity=".5" d="M22 22 L40 38 L25 46 Z M106 22 L88 38 L103 46 Z"/>
+  <!-- white muzzle -->
+  <path fill="#fff7ed" d="M26 70 C40 70 52 78 64 94 C76 78 88 70 102 70 C99 96 83 112 64 112 C45 112 29 96 26 70 Z"/>
+  <!-- eyes -->
+  <ellipse cx="46" cy="64" rx="6" ry="6.5" fill="#1c1917"/>
+  <ellipse cx="82" cy="64" rx="6" ry="6.5" fill="#1c1917"/>
+  <!-- nose -->
+  <path fill="#1c1917" d="M56 92 H72 L64 101 Z"/>
+</svg>

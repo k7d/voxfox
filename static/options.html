@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VoxFox settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/icon-128.png" alt="" width="56" height="56">
+      <div>
+        <h1>VoxFox</h1>
+        <p class="sub">Listen to any webpage with a single click.</p>
+      </div>
+    </header>
+
+    <section class="card how">
+      <h2>How to use</h2>
+      <ol>
+        <li>Click the <strong>VoxFox</strong> icon in the toolbar (pin it from the puzzle-piece menu), or press <kbd id="shortcut">Alt+Shift+V</kbd>.</li>
+        <li>Click again to pause or resume. Use the floating player to skip, change speed, or switch voice.</li>
+        <li>Select text first to hear only that part, or right-click → <em>Listen to selection</em>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Voice</h2>
+      <div class="row">
+        <label for="voice">Narrator</label>
+        <div class="inline">
+          <select id="voice"></select>
+          <button id="preview" class="secondary" type="button">▶ Preview</button>
+        </div>
+      </div>
+      <div class="row">
+        <label for="speed">Speed <output id="speedOut"></output></label>
+        <input id="speed" type="range" min="0.5" max="2" step="0.05">
+      </div>
+      <div class="row">
+        <label for="engine">Engine</label>
+        <select id="engine">
+          <option value="auto">Automatic (GPU when available)</option>
+          <option value="webgpu">WebGPU (fastest)</option>
+          <option value="wasm">CPU / WASM (most compatible)</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Voice model</h2>
+      <p class="muted">VoxFox uses <a href="https://huggingface.co/hexgrad/Kokoro-82M" target="_blank" rel="noopener">Kokoro</a>, an open-weight speech model that runs entirely on your device. Nothing you listen to leaves your computer. The model (~90–330&nbsp;MB) downloads once from Hugging Face and is cached.</p>
+      <div class="inline">
+        <button id="download" type="button">Download voice model now</button>
+        <span id="dlStatus" class="muted"></span>
+      </div>
+      <div class="track"><div id="dlFill" class="fill"></div></div>
+    </section>
+
+    <p class="saved" id="saved" aria-live="polite"></p>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

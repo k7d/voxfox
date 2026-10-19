@@ -1,0 +1,4 @@
+node_modules/
+dist/
+voxfox.zip
+test/*.png

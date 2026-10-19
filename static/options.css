@@ -1,0 +1,26 @@
+:root { color-scheme: light dark; --accent: #f97316; --accent-d: #ea580c; --bg: #fafaf9; --card: #fff; --fg: #1c1917; --muted: #78716c; --line: #e7e5e4; }
+@media (prefers-color-scheme: dark) { :root { --bg: #1c1917; --card: #292524; --fg: #fafaf9; --muted: #a8a29e; --line: #44403c; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 40px 20px 60px; }
+header { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; }
+h1 { margin: 0; font-size: 28px; letter-spacing: -.02em; }
+h2 { margin: 0 0 12px; font-size: 16px; }
+.sub, .muted { color: var(--muted); margin: 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+.how ol { margin: 0; padding-left: 20px; } .how li + li { margin-top: 6px; }
+kbd { font: 12px ui-monospace, monospace; padding: 2px 6px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; background: var(--bg); }
+.row { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 12px; padding: 8px 0; }
+.row + .row { border-top: 1px solid var(--line); }
+label { font-weight: 500; } output { color: var(--muted); font-weight: 400; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.inline { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+select, button { font: inherit; border-radius: 8px; padding: 7px 12px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
+select { min-width: 0; flex: 1; }
+button { background: var(--accent); color: #fff; border-color: transparent; cursor: pointer; font-weight: 500; }
+button:hover { background: var(--accent-d); } button:disabled { opacity: .6; cursor: default; }
+button.secondary { background: var(--bg); color: var(--fg); border-color: var(--line); }
+input[type=range] { accent-color: var(--accent); width: 100%; }
+a { color: var(--accent-d); }
+.track { height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; margin-top: 14px; }
+.fill { height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+.saved { color: var(--muted); font-size: 13px; text-align: center; min-height: 20px; }
