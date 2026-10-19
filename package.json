@@ -4,12 +4,6 @@
   "private": true,
   "description": "Listen to any webpage with a single click. Natural on-device voices powered by Kokoro.",
   "type": "module",
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "watch": "node scripts/build.mjs --watch",
-    "icons": "node scripts/icons.mjs",
-    "zip": "npm run build && cd dist && zip -qr ../voxfox.zip ."
-  },
   "dependencies": {
     "@mozilla/readability": "^0.6.0",
     "kokoro-js": "^1.2.1"
@@ -17,5 +11,12 @@
   "devDependencies": {
     "esbuild": "^0.25.0",
     "puppeteer-core": "^24.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "icons": "node scripts/icons.mjs",
+    "zip": "npm run build && cd dist && zip -qr ../voxfox.zip ."
   }
 }

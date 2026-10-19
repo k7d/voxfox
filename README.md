@@ -48,3 +48,7 @@ node test/audio-check.mjs     # generation speed on WebGPU vs WASM
 
 ONNX Runtime's WASM files are bundled in `dist/ort/`, so no executable code is loaded from a CDN
 (required by Manifest V3).
+
+## License
+
+[MIT](LICENSE) © Kaspars Dancis. The Kokoro model and `kokoro-js` are Apache-2.0.
