@@ -144,21 +144,22 @@ function setup() {
     }
     if (s.status !== "playing" && s.status !== "paused") return;
     const text = s.text;
-    if (!text || text.length < 20) return;
-    const needle = text.slice(0, 60);
-    const candidates = document.querySelectorAll("p, li, h1, h2, h3, h4, h5, h6, blockquote, dd, figcaption, td");
-    for (const el of candidates) {
-      if (el.offsetParent === null) continue;
-      if (el.textContent.replace(/\s+/g, " ").includes(needle)) {
-        marked = el;
-        el.dataset.voxfoxBg = el.style.backgroundColor;
-        el.style.transition = "background-color .3s";
-        el.style.backgroundColor = "rgba(249, 115, 22, 0.14)";
-        const r = el.getBoundingClientRect();
-        if (r.top < 0 || r.bottom > innerHeight - 90) el.scrollIntoView({ behavior: "smooth", block: "center" });
-        break;
-      }
+    if (!text || text.length < 12) return;
+    const needle = text.slice(0, 60).replace(/\.$/, "");
+    const has = (el) => el.offsetParent !== null && el.textContent.replace(/\s+/g, " ").includes(needle);
+    let el = [...document.querySelectorAll("p, li, h1, h2, h3, h4, h5, h6, blockquote, dd, figcaption, td")].find(has);
+    if (!el) {
+      // Fallback: the deepest element containing the text (e.g. a byline in a <div>).
+      el = [...document.body.querySelectorAll("*")].filter(has).pop();
+      if (el && el.closest("voxfox-player")) el = null;
     }
+    if (!el) return;
+    marked = el;
+    el.dataset.voxfoxBg = el.style.backgroundColor;
+    el.style.transition = "background-color .3s";
+    el.style.backgroundColor = "rgba(249, 115, 22, 0.14)";
+    const r = el.getBoundingClientRect();
+    if (r.top < 0 || r.bottom > innerHeight - 90) el.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 }
 

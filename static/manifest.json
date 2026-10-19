@@ -28,10 +28,6 @@
     "storage",
     "contextMenus"
   ],
-  "host_permissions": [
-    "https://huggingface.co/*",
-    "https://*.hf.co/*"
-  ],
   "options_page": "options.html",
   "commands": {
     "_execute_action": {

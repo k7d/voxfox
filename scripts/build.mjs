@@ -15,7 +15,7 @@ if (!existsSync("static/icons/icon-128.png")) execSync("node scripts/icons.mjs",
 // Test builds get host access, since programmatic action clicks don't grant activeTab.
 if (process.env.VOXFOX_TEST) {
   const m = JSON.parse(readFileSync(`${out}/manifest.json`, "utf8"));
-  m.host_permissions.push("http://localhost/*");
+  m.host_permissions = [...(m.host_permissions ?? []), "http://localhost/*"];
   writeFileSync(`${out}/manifest.json`, JSON.stringify(m, null, 2));
 }
 
