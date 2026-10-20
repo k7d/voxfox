@@ -4,6 +4,8 @@ Listen to any webpage with a single click. VoxFox reads articles aloud with natu
 [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M) voices that run **entirely on your device**:
 no account, no API key, and no text sent to a server.
 
+**[➜ Install from the Chrome Web Store](https://chromewebstore.google.com/detail/voxfox/cjmbmpedecfjiklcafgdccdcclnmgkoi)**
+
 ## Features
 
 - **One click** on the toolbar icon (or `⌃⌘V` on Mac, `Alt+Shift+V` on Windows/Linux) starts reading; click again to pause or resume.
